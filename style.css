@@ -1,0 +1,260 @@
+/* Root Style */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap");
+
+:root {
+  --DarkBlue: hsl(240, 38%, 20%);
+  --GrayishBlue: hsl(240, 18%, 77%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 50%;
+}
+/* Root Style */
+
+/* Main CSS */
+
+/* Body */
+body {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 8vw;
+  padding-top: 14vw;
+  background: url(./images/pattern-bg.svg), url(./images/pattern-curve.svg);
+  background-position: center 8%, bottom left;
+  background-repeat: no-repeat;
+  background-size: 85%, 80%;
+  color: var(--DarkBlue);
+  font-family: "Inter", sans-serif;
+  font-size: 4rem;
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    align-items: center;
+    padding: 0 8rem;
+    background-position: 90% 35%, bottom left;
+    background-size: auto;
+  }
+}
+/* Body */
+
+/* Content Wrapper */
+.content-wrapper {
+  width: 100%;
+  max-width: 138rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-wrapper {
+  position: relative;
+  order: 2;
+}
+
+.text-wrapper::before {
+  content: url(./images/pattern-curve.svg);
+  position: absolute;
+  top: -7rem;
+  left: 50%;
+  transform: translate(-50%) scale(0.5);
+}
+
+@media only screen and (min-width: 800px) {
+  .content-wrapper {
+    flex-direction: row;
+  }
+
+  .text-wrapper::before {
+    top: -8.5rem;
+    left: 11.5rem;
+    transform: initial;
+  }
+
+  .text-wrapper {
+    order: 1;
+    margin-bottom: -4rem;
+  }
+}
+/* Content Wrapper */
+
+/* Review Text */
+.review-text {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 60rem;
+  margin-bottom: 4rem;
+  font-size: 2.25rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  .review-text {
+    width: 115%;
+    max-width: none;
+    font-size: 3.25rem;
+    text-align: start;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .review-text {
+    font-size: 4rem;
+    line-height: 5.5rem;
+  }
+}
+
+/* Review Text */
+
+/* Review Author */
+
+.author-content-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.author-name {
+  font-weight: 700;
+}
+
+.author-title {
+  color: var(--GrayishBlue);
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 800px) {
+  .author-content-wrapper {
+    flex-direction: row;
+  }
+
+  .author-name {
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .author-content-wrapper {
+    font-size: 2.75rem;
+  }
+}
+/* Review Author */
+
+/* Carousel */
+.carousel {
+  position: relative;
+  order: 1;
+  margin-bottom: 10rem;
+}
+
+.carousel-img {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: 1rem 6rem 40px -2.5rem rgba(32, 32, 70, 0.2);
+  outline: 1px solid transparent;
+  padding: 1px;
+  background-clip: content-box;
+}
+
+@media only screen and (min-width: 800px) {
+  .carousel {
+    order: 2;
+    margin-top: -4rem;
+    margin-bottom: 0;
+  }
+
+  .carousel-img {
+    width: 45vw;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .carousel-img {
+    width: auto;
+  }
+}
+/* Carousel */
+
+/* Buttons */
+.carousel-btn-wrapper {
+  position: absolute;
+  left: 50%;
+  bottom: -3rem;
+  transform: translate(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (min-width: 800px) {
+  .carousel-btn-wrapper {
+    left: 8rem;
+    bottom: -3rem;
+
+    transform: translate(0);
+  }
+}
+
+.btn {
+  border: none;
+  padding: 1.5rem 1.75rem;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.btn:hover {
+  background-color: #f0f0f0;
+}
+
+.btn:active img {
+  transform: scale(1.2);
+}
+
+.btn img {
+  width: 1rem;
+}
+
+.btn-previous {
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+
+.btn-next {
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+@media only screen and (min-width: 800px) {
+  .btn {
+    padding: 2.125rem 2.75rem;
+  }
+
+  .btn img {
+    width: auto;
+  }
+}
+/* Buttons */
